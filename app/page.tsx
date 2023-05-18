@@ -12,6 +12,7 @@ export default function Home() {
 
   const asignarPuestos = () => {
     const puestos = personas.map((_, i) => i + 1);
+    
     const mezclaPuestos = (array: number[]) => {
       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -19,6 +20,9 @@ export default function Home() {
       }
     };
     mezclaPuestos(puestos);
+
+    console.log(puestos);
+   
     setPersonas(
       personas.map((persona, i) => `${persona} - Puesto ${puestos[i]}`)
     );
