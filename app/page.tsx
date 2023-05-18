@@ -31,18 +31,22 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-     
         <div>
-        <h1 className="text-4xl font-bold text-center text-gray-800 mt-8 mb-4">Aplicación de asignación de puestos (SUSU)</h1>
+          <h1 className="text-4xl font-bold text-center text-gray-800 mt-8 mb-4">
+            Aplicación de asignación de puestos (SUSU)
+          </h1>
           <form onSubmit={handleSubmit(onSubmit)}>
             <label>
               Nombre:
-              <input className="mt-5 border border-gray-400 py-2 px-4 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" type="text" {...register("nombre", { required: true })} />
+              <input
+                className="mt-5 border border-gray-400 py-2 px-4 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                type="text"
+                {...register("nombre", { required: true })}
+              />
             </label>
             <div className="mt-5">
-              <button 
+              <button
                 type="submit"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               >
@@ -50,19 +54,34 @@ export default function Home() {
               </button>
             </div>
           </form>
-          <button onClick={asignarPuestos}  className="mt-5 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Asignar puestos</button>
-          <ul className="mt-5 list-disc pl-4 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 p-8 list-none">
-            {personas.map((persona, index) => (
-              <li key={index}>{persona}</li>
-            ))}
-          </ul>
+          <button
+            onClick={asignarPuestos}
+            className="mt-5 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Asignar puestos
+          </button>
+          {personas.length > 0 ? (
+            <ul className="mt-5 list-disc pl-4 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 p-8 list-none">
+              {personas.map((persona, index) => (
+                <li key={index}>{persona}</li>
+              ))}
+            </ul>
+          ) : null}
         </div>
       </div>
 
-     
       <div className="fixed bottom-0 left-0 right-0 z-10 bg-white p-4 flex justify-center items-center">
-      <h1>Elaborado por <a style={{color:"blue"}} target="_blank" href="https://jfdesousa.com">Jose Fuentes</a></h1>
-</div>
+        <h1>
+          Elaborado por{" "}
+          <a
+            style={{ color: "blue" }}
+            target="_blank"
+            href="https://jfdesousa.com"
+          >
+            Jose Fuentes
+          </a>
+        </h1>
+      </div>
     </main>
   );
 }
