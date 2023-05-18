@@ -51,13 +51,18 @@ export default function Home() {
             </div>
           </form>
           <button onClick={asignarPuestos}  className="mt-5 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Asignar puestos</button>
-          <ul className="mt-5 list-disc pl-4 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 p-8">
+          <ul className="mt-5 list-disc pl-4 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 p-8 list-none">
             {personas.map((persona, index) => (
               <li key={index}>{persona}</li>
             ))}
           </ul>
         </div>
       </div>
+
+     
+      <div className="fixed bottom-0 left-0 right-0 z-10 bg-white p-4 flex justify-center items-center">
+      <h1>Elaborado por <a style={{color:"blue"}} target="_blank" href="https://jfdesousa.com">Jose Fuentes</a></h1>
+</div>
     </main>
   );
 }
